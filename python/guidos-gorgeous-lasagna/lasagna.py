@@ -4,7 +4,7 @@ Learn about Guido, the creator of the Python language: https://en.wikipedia.org/
 """
 
 EXPECTED_BAKE_TIME = 40
-PREPERATION_TIME = 2
+PREPARATION_TIME = 2
 
 def bake_time_remaining(elapsed_bake_time):
     """Calculate the bake time remaining.
@@ -16,7 +16,7 @@ def bake_time_remaining(elapsed_bake_time):
     argument and returns how many minutes the lasagna still needs to bake based
     on the 'EXPECTED_BAKE_TIME'.
     """
-    return elapsed_bake_time - EXPECTED_BAKE_TIME
+    return EXPECTED_BAKE_TIME - elapsed_bake_time
 
 def preparation_time_in_minutes(number_of_layers):
     """Calculate the preparation time remaining.
@@ -28,7 +28,7 @@ def preparation_time_in_minutes(number_of_layers):
     argument and returns how many additional minutes of preparation the lasagna needs
     based on the 'PREPARATION_TIME'.
     """
-    return number_of_layers * PREPERATION_TIME
+    return number_of_layers * PREPARATION_TIME
 
 def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
     """Calculate the total number of minutes it has been cooking.
@@ -42,4 +42,4 @@ def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
     minutes you've been cooking.
 
     """
-    return bake_time_remaining(elapsed_bake_time) + preparation_time_in_minutes(number_of_layers)
+    return elapsed_bake_time + preparation_time_in_minutes(number_of_layers)
